@@ -4,7 +4,7 @@ date: 2018-10-10 22:49:36
 tags:
 ---
 
-![logo](/home/james/%E5%9B%BE%E7%89%87/logo.png)
+![logo](SpringBoot整合Netty并使用Protobuf进行数据传输/logo.png)
 
 
 
@@ -25,7 +25,7 @@ tags:
 这里的使用就只介绍Java相关的使用。具体protobuf3的使用可以看[Protobuf 语言指南(proto3)](https://www.cnblogs.com/sanshengshui/p/9739521.html)。
 首先我们需要在src/main文件夹下建立一个proto文件夹，然后在该文件夹新建一个**user.proto**文件，此文件定义我们需要传输的文件。
 
-![选区_002](/home/james/%E5%9B%BE%E7%89%87/%E9%80%89%E5%8C%BA_002.png)
+![选区_002](SpringBoot整合Netty并使用Protobuf进行数据传输/选区_002.png)
 
 **注**：使用grpc方式编译**.proto**时，会默认扫描src/main/proto文件夹下的protobuf文件。
 
@@ -55,9 +55,11 @@ message User{
 
 创建好该文件之后，我们**cd**到该工程的根目录下，执行**mvn clean compile**,输入完之后，回车即可在target文件夹中看到已经生成好的Java文件，然后直接在工程中使用此protobuf文件就可以了。因为能自动扫描到此类。详情请看下图:
 
-![选区_003](/home/james/%E5%9B%BE%E7%89%87/%E9%80%89%E5%8C%BA_003.png)
+![选区_003](SpringBoot整合Netty并使用Protobuf进行数据传输/选区_003.png)
 
 **注：生成protobuf的文件软件和测试的protobuf文件我也整合到该项目中了，可以直接获取的。**
+
+<!-- more -->
 
 Java文件生成好之后，我们再来看怎么使用。
 这里我就直接贴代码了，并且将注释写在代码中，应该更容易理解些吧。。。
@@ -763,7 +765,7 @@ public class NettyClientHandler extends ChannelInboundHandlerAdapter {
 
 如下图:
 
-![选区_004]()
+![选区_004](SpringBoot整合Netty并使用Protobuf进行数据传输/选区_004.png)
 
 ## 其它
 
